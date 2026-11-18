@@ -490,7 +490,6 @@ int NWS_midgame(Search *search, const int alpha, int depth, Node *parent)
 		}
 	} else {
 		// transposition cutoff
-		hash_code = board_get_hash_code(board);
 		if ((hash_get(hash_table, board, hash_code, &hash_data) || hash_get(pv_table, board, hash_code, &hash_data))
 		 && search_TC_NWS(&hash_data, depth, search->selectivity, alpha, &score)) return score;
 
